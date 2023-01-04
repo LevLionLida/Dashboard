@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  mysql1:
+    image: mariadb:10.5.7
+    container_name: echat_bitrix_dev_d
+    environment:
+
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: echat_bitrix_dev
+    ports:
+      - "127.0.0.1:33061:3306"
+
+  mysql2:
+    image: mariadb:10.5.7
+    container_name: echat_amo_dev
+    environment:
+
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: echat_amo_dev
+    ports:
+      - "127.0.0.1:33062:3306"
+
+  mysql3:
+    image: mariadb:10.5.7
+    container_name: analytics
+    environment:
+
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: analytics
+    ports:
+      - "127.0.0.1:33063:3306"
+
+
+
